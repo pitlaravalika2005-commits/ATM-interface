@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ATM Interface</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- LOGIN SCREEN -->
+  <div id="loginPage" class="card">
+    <h2>🏦 ATM LOGIN</h2>
+
+    <input type="text" id="userId" placeholder="Enter User ID"/>
+    <input type="password" id="pin" placeholder="Enter PIN"/>
+
+    <button onclick="login()">Login</button>
+
+    <p id="error"></p>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="hidden">
+
+    <div class="topbar">
+      <h2>Welcome, User 👋</h2>
+      <button class="logout" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="balance-card">
+      <h3>Current Balance</h3>
+      <h1>₹ <span id="balance">10000</span></h1>
+    </div>
+
+    <div class="actions">
+
+      <div class="box deposit">
+        <h3>Deposit</h3>
+        <input type="number" id="depositAmount" placeholder="Amount"/>
+        <button onclick="deposit()">Add Money</button>
+      </div>
+
+      <div class="box withdraw">
+        <h3>Withdraw</h3>
+        <input type="number" id="withdrawAmount" placeholder="Amount"/>
+        <button onclick="withdraw()">Take Money</button>
+      </div>
+
+      <div class="box transfer">
+        <h3>Transfer</h3>
+        <input type="text" id="receiver" placeholder="Receiver ID"/>
+        <input type="number" id="transferAmount" placeholder="Amount"/>
+        <button onclick="transfer()">Send</button>
+      </div>
+
+    </div>
+
+    <div class="history">
+      <h3>Transaction History</h3>
+      <ul id="historyList"></ul>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
